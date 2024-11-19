@@ -16,7 +16,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome to Wordy!</ThemedText>
+        <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -26,7 +26,7 @@ export default function HomeScreen() {
         <ThemedText type="subtitle">Universidad Nacional de Colombia, Sede Bogotá</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Brian Chaparro Cetina</ThemedText>
+        <ThemedText type="subtitle">Brian Chaparro</ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
