@@ -89,7 +89,8 @@ export default function Game() {
     w: require("./assets/win.mp3"),
     l: require("./assets/lose.mp3"),
     t: require("./assets/tie.mp3"),
-    T: require('./assets/tap.mp3')
+    T: require('./assets/tap.mp3'),
+    N: require('./assets/newGameSound.mp3')
   }
   useEffect(() => {
     return () => {
@@ -145,6 +146,7 @@ export default function Game() {
   }
 
   function newGame(){
+    playSound('N',sound)
     setHistory([Array(9).fill(null)]); 
     setCurrentMove(0);
     setBoardLocket(false);
@@ -272,12 +274,14 @@ export default function Game() {
   }
   
   return (
-    <View style={styles.container}>
+    <View style={styles.containerBig}>
       <View style={styles.gameBoard}>
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay}  resetGame={resetGame} 
           pcMove={pcMove} df={difficulty} pX = {pX} pO={pO} ties={ties} setPX = {setPX} setPO={setPO} setTies = {setTies} isBoardLocked={isBoardLocked}
         />
       </View>
+      <View style={styles.container2}>
+      
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.bottomButton} onPress={newGame}>
         <Image 
@@ -322,7 +326,9 @@ export default function Game() {
           />
           <Text style={styles.buttonText}>Salir</Text>
         </TouchableOpacity>        
-      </View>      
+      </View>
+      </View>
+            
     </View>
   );
 }
@@ -348,14 +354,30 @@ function calculateWinner(squares) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container1: {
+    flex: 1,
+    justifyContent: 'flex-end', // Centrado vertical
+    alignItems: 'center', // Centrado horizontal
+    padding: 20,
+  },
+  container2: {
+    flex: 1,
+    justifyContent: 'flex-end', // Centrado vertical
+    alignItems: 'center', // Centrado horizontal
+    padding: 20,
+  },
+  containerBig: {
     flex: 1,
     justifyContent: 'center', // Centrado vertical
     alignItems: 'center', // Centrado horizontal
     padding: 20,
+    backgroundColor: 'rgba(61, 166, 236, 0.5)',
   },
   gameBoard: {
-    marginBottom: 20,
+    flex: 1,                  // Takes available space
+    justifyContent: 'center', // Centers vertically
+    alignItems: 'center',     // Centers horizontally
+    marginBottom: -300,         // Keeps the bottom margin if needed
   },
   boardContainer: {
     alignItems: 'center',
@@ -397,14 +419,17 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#f0f0f0',
     padding: 10,
+    borderRadius: 10,
   },
   bottomButton: {
     flex: 1,
     alignItems: 'center',
     padding: 10,
     marginHorizontal: 5,
-    backgroundColor: '#007BFF',
+    backgroundColor: '#CCC1B8',
     borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'black',
   },
   buttonText: {
     color: '#fff',
