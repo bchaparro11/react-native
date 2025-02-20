@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center', // Centrado vertical
       alignItems: 'center', // Centrado horizontal
       padding: 20,
+      backgroundColor: 'rgba(61, 166, 236, 0.5)'
     },
     containerLandscape:{
         flex:1,
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         padding: 20,
+        backgroundColor: 'rgba(61, 166, 236, 0.5)'
 
     },
     controlsPortrait: {
@@ -81,6 +83,9 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         marginVertical: 5,
         backgroundColor: '#007BFF',
+        backgroundColor: '#CCC1B8',
+        borderColor: 'black',
+        borderWidth: 1,
         borderRadius: 5,
     },
     buttonText: {

@@ -117,7 +117,8 @@ export default function Game() {
     w: require("./assets/win.mp3"),
     l: require("./assets/lose.mp3"),
     t: require("./assets/tie.mp3"),
-    T: require('./assets/tap.mp3')
+    T: require('./assets/tap.mp3'),
+    N: require('./assets/newGameSound.mp3')
   }
   // Deteccion de la orientacion de la pantalla
   const [orientation, setOrientation] = useState('portrait');
@@ -209,6 +210,7 @@ export default function Game() {
   }
 
   function newGame(){
+    playSound('N',sound)
     setHistory([Array(9).fill(null)]); 
     setCurrentMove(0);
     setBoardLocket(false);
