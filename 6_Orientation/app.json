@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "tic-tac-toe",
+    "slug": "tic-tac-toe",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/ttt.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/ttt.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
